@@ -133,15 +133,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         print (error)
         return
         }
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginViewController  =  storyboard.instantiateViewController(withIdentifier: "loginScreen")
-        let homeViewController  =  storyboard.instantiateViewController(withIdentifier: "homeScreen")
-        LoginFile.userFromGoole = user2
-        LoginFile.employeeRef2 = (user?.uid)!
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginViewController  =  storyboard.instantiateViewController(withIdentifier: "loginScreen")
+            let homeViewController  =  storyboard.instantiateViewController(withIdentifier: "homeScreen")
             
-        self.window?.rootViewController = loginViewController///homeViewController// before the app
-
-        return
+            LoginFile.userFromGoole = user2
+            LoginFile.employeeRef2 = (user?.uid)!
+            // self.window?.rootViewController = loginViewController // before the app
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SomeNotification"), object: nil)
+            
+            return
         }//end of if
             
         func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {

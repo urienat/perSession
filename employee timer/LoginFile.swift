@@ -33,8 +33,12 @@ class LoginFile: UIViewController, UITextFieldDelegate,FBSDKLoginButtonDelegate 
     static var employeeRef2 = "" {
     didSet {    //called when employeeref2 changed
     print("changed")
+        NotificationCenter.default.addObserver(self, selector: #selector(inFireBase), name: NSNotification.Name(rawValue: "SomeNotification"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "SomeNotification"), object: nil)
     }
     }
+    
+   
     
         var pickedImage:UIImage?
         let picture = UIImage(named: "perSessionImage")
