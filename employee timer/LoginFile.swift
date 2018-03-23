@@ -178,6 +178,8 @@ class LoginFile: UIViewController, UITextFieldDelegate,FBSDKLoginButtonDelegate 
         dog.layer.cornerRadius = 50
         mydateFormat5.dateFormat = DateFormatter.dateFormat(fromTemplate: "MM/dd/yy, (HH:mm)",options: 0, locale: nil)!
         
+        NotificationCenter.default.addObserver(self, selector: #selector(inFireBase), name: NSNotification.Name(rawValue: "SomeNotification"), object: nil)
+        
         //delgate to hide keyboard
         self.email.delegate = self
         self.password.delegate = self
