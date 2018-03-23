@@ -54,15 +54,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         ///subs.shared.loadSubscriptionOptions()
         SwiftyStoreKit.completeTransactions(atomically: true) { purchases in for purchase in purchases { if purchase.transaction.transactionState == .purchased ||
         purchase.transaction.transactionState == .restored { if purchase.needsFinishTransaction { SwiftyStoreKit.finishTransaction(purchase.transaction) }; print("purchased: \(purchase)") } } }
-            
-
-        
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         
-        
-
         // Initialize Google  sign-in
         var configureError: NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
@@ -141,9 +136,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let loginViewController  =  storyboard.instantiateViewController(withIdentifier: "loginScreen")
         let homeViewController  =  storyboard.instantiateViewController(withIdentifier: "homeScreen")
-        self.window?.rootViewController = homeViewController// before the app
         LoginFile.userFromGoole = user2
         LoginFile.employeeRef2 = (user?.uid)!
+            
+        self.window?.rootViewController = loginViewController///homeViewController// before the app
+
         return
         }//end of if
             
