@@ -256,7 +256,7 @@ class dogFile: UIViewController, UIImagePickerControllerDelegate,UINavigationCon
         } // end of update of an existed employer
         else{
         let employerRefence = self.dbRefEmployers.childByAutoId()
-            employerRefence.setValue(["fName" : self.pName.text!,"fMail": self.pEmail.text!, "fCell": self.pCell.text!, "fAddress": self.pAddress.text!, "fRem" : self.pRem.text!,  "fEmployer":self.pLastName.text!,"fImageRef":"https://firebasestorage.googleapis.com/v0/b/employeetimer.appspot.com/o/employerImages%2F47574737_s.jpg?alt=media&token=48983dc3-ca8d-4d9f-9b6d-3df6d756c480", "fEmployerReg":employerRefence.key,"fLast":"New Account", "fActive" : true,"fParent" : self.studentParentNameText.text!
+            employerRefence.setValue(["fName" : self.pName.text!,"fMail": self.pEmail.text!, "fCell": self.pCell.text!, "fAddress": self.pAddress.text!, "fRem" : self.pRem.text!,  "fEmployer":self.pLastName.text!,"fImageRef":"https://firebasestorage.googleapis.com/v0/b/persession-45987.appspot.com/o/smalllogopersession.png?alt=media&token=c5e823f6-3095-4d40-99ea-3873b6db27a5", "fEmployerReg":employerRefence.key,"fLast":"New Account", "fActive" : true,"fParent" : self.studentParentNameText.text!
                 
         ])//end of set value
             

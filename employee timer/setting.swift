@@ -307,7 +307,7 @@ class setting: UIViewController, UIImagePickerControllerDelegate,UINavigationCon
             keeper.set("", forKey: "userKept")
             keeper.set("", forKey: "passwordKept")
             UserDefaults.standard.synchronize()
-
+            self.currency.text = Locale.current.currencySymbol!
             passWord.isHidden = false
             reset.isHidden = true
             
