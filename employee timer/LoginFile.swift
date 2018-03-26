@@ -12,7 +12,7 @@ import FacebookCore
 import Google
 import GoogleSignIn
 
-class LoginFile: UIViewController, UITextFieldDelegate,FBSDKLoginButtonDelegate ,GIDSignInUIDelegate{
+class LoginFile: UIViewController, UITextFieldDelegate,FBSDKLoginButtonDelegate ,GIDSignInUIDelegate,GIDSignInDelegate{
 
     var blueColor = UIColor(red :22/255.0, green: 131/255.0, blue: 248/255.0, alpha: 1.0)
 
@@ -191,6 +191,7 @@ class LoginFile: UIViewController, UITextFieldDelegate,FBSDKLoginButtonDelegate 
         signIn.layoutIfNeeded()
 
         GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
         view.addSubview(loginButton2)
         loginButton2.frame = CGRect(x: view.frame.width/2-104, y: 50, width: 208, height: 45)
         
@@ -415,6 +416,50 @@ class LoginFile: UIViewController, UITextFieldDelegate,FBSDKLoginButtonDelegate 
             //LoginFile.logoutchosen = false
         }//end of if
         }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user2: GIDGoogleUser!, withError error: Error?) {
+        if GIDSignIn.sharedInstance().hasAuthInKeychain() == true{
+            print ("has auth key chain")
+        }else{
+            print ("no auth key chain")
+        }
+        
+        if let error = error {
+            print ("not 1234")
+            return
+        }
+        
+        print ("1234")
+        guard let authentication = user2.authentication else { return }
+        let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+            if let error = error {
+                print ("ggg",error)
+                return
+            }
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginViewController  =  storyboard.instantiateViewController(withIdentifier: "loginScreen")
+            let homeViewController  =  storyboard.instantiateViewController(withIdentifier: "homeScreen")
+            
+            LoginFile.userFromGoole = user2
+            LoginFile.employeeRef2 = (user?.uid)!
+            // self.window?.rootViewController = loginViewController // before the app
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SomeNotification"), object: nil)
+            
+            return
+        }//end of if
+        
+        func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+            // Perform any operations when the user disconnects from app here.
+            // ...
+            print ("ggg",GIDGoogleUser.self)
+            
+        }
+        
+        
+    }
+    
+    
     //alerts/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     func alert2 () {

@@ -23,7 +23,7 @@ import SwiftyStoreKit
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var isLoggedIn:Bool?
@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         
         GIDSignIn.sharedInstance().clientID =  FIRApp.defaultApp()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self
+       
         GIDSignIn.sharedInstance().signInSilently() ////try
         
         RebeloperStore.shared.start()
@@ -120,38 +120,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         }
 
-        func sign(_ signIn: GIDSignIn!, didSignInFor user2: GIDGoogleUser!, withError error: Error?) {
-        if let error = error {
-        return
-        }
-            
-        print ("1234")
-        guard let authentication = user2.authentication else { return }
-        let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
-        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
-        if let error = error {
-        print (error)
-        return
-        }
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let loginViewController  =  storyboard.instantiateViewController(withIdentifier: "loginScreen")
-            let homeViewController  =  storyboard.instantiateViewController(withIdentifier: "homeScreen")
-            
-            LoginFile.userFromGoole = user2
-            LoginFile.employeeRef2 = (user?.uid)!
-            // self.window?.rootViewController = loginViewController // before the app
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SomeNotification"), object: nil)
-            
-            return
-        }//end of if
-            
-        func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        // Perform any operations when the user disconnects from app here.
-        // ...
-        }
 
-
-    }
     
 }
 
