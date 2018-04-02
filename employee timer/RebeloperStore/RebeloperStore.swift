@@ -28,7 +28,7 @@ import StoreKit
 import SwiftyStoreKit
 import KeychainAccess
 
-let AppBundleId = Bundle.main.bundleIdentifier!
+let AppBundleId = "HomePloyer.perSession"//Bundle.main.bundleIdentifier!
 let mydateFormat = DateFormatter()
 
 let iAPStatusChanged = "iAPStatusChanged"

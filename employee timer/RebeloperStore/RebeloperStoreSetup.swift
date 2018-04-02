@@ -43,6 +43,8 @@ let KeychainSecret = "ea4bc2b9a25e2a6bff93ffcd26bef2c3" // IMPORTANT: once your 
 let resetKeychainToDefaultValues = false // IMPORTANT: set this to 'false' before release
 let shouldLogRebeloperStoreKeychainAccount = false//true
 
+//HomePloyer.perSession.mainSub
+
 // set up your In-app Purchases and Virtual Purchases
 
 // -------------------------- IAPs --------------------------
