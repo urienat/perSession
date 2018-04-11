@@ -1983,7 +1983,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "441"
             endingLineNumber = "441"
-            landmarkName = "amountCalc()"
+            landmarkName = "moveSessionToBilled()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1999,8 +1999,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "450"
             endingLineNumber = "450"
-            landmarkName = "amountCalc3()"
-            landmarkType = "7">
+            landmarkName = "newVCTable"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
