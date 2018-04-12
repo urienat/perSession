@@ -30,19 +30,31 @@ extension(ViewController){
 
         self.homeTitle.titleView = nil
         print (filteredEmployerForList,indexPath.row,filteredEmployerForList[indexPath.row].accountName)
-        self.homeTitle.title = (filteredEmployerForList[indexPath.row].accountName)
+            if (filteredEmployerForList) == nil {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)){
+                    self.homeTitle.title = (self.filteredEmployerForList[indexPath.row].accountName)
+                    self.employerToS = self.filteredEmployerForList[indexPath.row].accountName
+                    self.employerIDToS = self.filteredEmployerForList[indexPath.row].employerRef
+
+                }
+                
+            } else {
+                self.homeTitle.title = (filteredEmployerForList[indexPath.row].accountName)
+                employerToS = filteredEmployerForList[indexPath.row].accountName
+                employerIDToS = filteredEmployerForList[indexPath.row].employerRef
+
+                
+            }
         btnMenu.setImage (home, for: .normal)
         btnMenu.removeTarget(self, action:#selector(sideMenuMovement), for: .touchUpInside)
         btnMenu.addTarget(self, action: #selector(noAccount), for: .touchUpInside)
         toolBar.isHidden = false
         addAccount.isEnabled = false
 
-        print (filteredEmployerForList)
+        //print (filteredEmployerForList)
             
-        employerToS = filteredEmployerForList[indexPath.row].accountName
-        employerIDToS = filteredEmployerForList[indexPath.row].employerRef
             
-        print (employerToS,indexPath.row)
+        //print (employerToS,indexPath.row)
 
         bringEmployerData()
 
