@@ -29,6 +29,7 @@ extension(ViewController){
         importSpesific.isEnabled = true
 
         self.homeTitle.titleView = nil
+        print (filteredEmployerForList,indexPath.row,filteredEmployerForList[indexPath.row].accountName)
         self.homeTitle.title = (filteredEmployerForList[indexPath.row].accountName)
         btnMenu.setImage (home, for: .normal)
         btnMenu.removeTarget(self, action:#selector(sideMenuMovement), for: .touchUpInside)

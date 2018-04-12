@@ -60,6 +60,9 @@
             let employerToAdd:employerStruct = employerStruct( accountName:"\(self.dogItem) \(self.employerItem)" , employerRef: self.employerIdArray2[iIndex] as! String, activeAccount: (snapshot.childSnapshot(forPath: "fActive").value as? Bool)!, lastDocAccount: self.lastDocumentItem, accountImageUrl:self.profileImageUrl )
             self.employerForList.append(employerToAdd)
 
+print (iIndex)
+            print ("fff\(self.employerIdArray2)")
+            print ("ffy\(self.employerIdArray2.count)")
 
         if iIndex == (self.employerIdArray2.count-1) {
         
