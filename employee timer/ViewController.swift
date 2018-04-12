@@ -112,7 +112,7 @@
         print ("add")
         arrow.isHidden = true
         employerToS = "Add Account"
-        if employerIdArray.count > 4 {checkSubs()} else {
+        if employerIdArray.count > 2 {checkSubs()} else {
         self.addAccount.isEnabled = true
         accountClicked()
         }
@@ -588,7 +588,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////alerts
         func  alert83(){
         
-        let alertController83 = UIAlertController(title: ("Subscription alert") , message: " Adding more than 4 accounts requires subscription and we couldn't find one. Please subscribe with free trial or log again if you have one.", preferredStyle: .alert)
+        let alertController83 = UIAlertController(title: ("Subscription alert") , message: " Adding more than 2 accounts requires subscription and we couldn't find one. Please subscribe with free trial or log again if you have one.", preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
        
         ViewController.subPusher = true
