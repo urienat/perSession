@@ -56,8 +56,10 @@
             self.profileImageUrl = "https://firebasestorage.googleapis.com/v0/b/persession-45987.appspot.com/o/perSessionImage.jpg?alt=media&token=078c12de-f291-43a6-82d4-f68ac83cd9c9"
                 
             }
+            
+            print ((snapshot.childSnapshot(forPath: "fActive").value) as! Bool)
 
-            let employerToAdd:employerStruct = employerStruct( accountName:"\(self.dogItem) \(self.employerItem)" , employerRef: self.employerIdArray2[iIndex] as! String, activeAccount: (snapshot.childSnapshot(forPath: "fActive").value as? Bool)!, lastDocAccount: self.lastDocumentItem, accountImageUrl:self.profileImageUrl )
+            let employerToAdd:employerStruct = employerStruct( accountName:"\(self.dogItem) \(self.employerItem)" , employerRef: self.employerIdArray2[iIndex] as! String, activeAccount: (snapshot.childSnapshot(forPath: "fActive").value as! Bool), lastDocAccount: self.lastDocumentItem, accountImageUrl:self.profileImageUrl )
             self.employerForList.append(employerToAdd)
 
 print (iIndex)
