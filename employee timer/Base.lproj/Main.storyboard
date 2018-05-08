@@ -2088,7 +2088,7 @@
                         <viewControllerLayoutGuide type="top" id="qKH-jT-XhF"/>
                         <viewControllerLayoutGuide type="bottom" id="twK-NU-76K"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4Aa-sb-LQD">
+                    <view key="view" hidden="YES" contentMode="scaleToFill" id="4Aa-sb-LQD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -2252,7 +2252,7 @@
                                             <constraint firstAttribute="height" constant="42" id="hmg-gS-Kyn"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Ler's Go!"/>
+                                        <state key="normal" title="Let's Go!"/>
                                         <connections>
                                             <action selector="letsGo:" destination="QwA-1e-1p4" eventType="touchUpInside" id="eny-l2-yXe"/>
                                         </connections>
@@ -2311,6 +2311,7 @@
                         <outlet property="forgot" destination="NiB-Rc-LZj" id="YvM-Qd-aWF"/>
                         <outlet property="letsGo" destination="C2F-rm-j7k" id="L2c-t8-W0k"/>
                         <outlet property="loginBarImage" destination="HNh-Jn-nzq" id="Vsl-kn-aoL"/>
+                        <outlet property="loginView" destination="4Aa-sb-LQD" id="sau-dD-0KW"/>
                         <outlet property="password" destination="Pog-dx-X7C" id="DPt-6s-xTU"/>
                         <outlet property="signIn" destination="NTs-3R-g9p" id="icG-yh-2Fe"/>
                         <outlet property="thinking" destination="AiQ-AU-mU3" id="XoA-hO-Av1"/>

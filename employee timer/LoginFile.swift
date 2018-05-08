@@ -119,6 +119,7 @@ class LoginFile: UIViewController, UITextFieldDelegate,FBSDKLoginButtonDelegate 
     var userPassword:String! = nil
     var nofirstTimer:Bool?
 
+    @IBOutlet var loginView: UIView!
     @IBOutlet weak var welcomeScreen: UIView!
     @IBOutlet weak var letsGo: UIButton!
     @IBAction func letsGo(_ sender: Any) {
@@ -252,6 +253,7 @@ class LoginFile: UIViewController, UITextFieldDelegate,FBSDKLoginButtonDelegate 
                 inFireBase()
             } else {
                 print (GIDSignIn.sharedInstance().currentUser)
+                loginView.isHidden = false
             }
         }// end of else if
         /*
