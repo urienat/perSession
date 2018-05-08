@@ -117,6 +117,7 @@ class LoginFile: UIViewController, UITextFieldDelegate,FBSDKLoginButtonDelegate 
     var rememberMe:Int?
     var userEmail:String?
     var userPassword:String! = nil
+    var firstTimer:Bool?
 
     @IBOutlet weak var check: UIButton! // section for rememberme check
     @IBAction func checkBox(_ sender: Any) {
@@ -173,6 +174,9 @@ class LoginFile: UIViewController, UITextFieldDelegate,FBSDKLoginButtonDelegate 
     
     override func viewDidLoad() {
         connectivityCheck()
+        print (keeper.bool(forKey: "firstTimer"))
+        if keeper.bool(forKey: "firstTimer") == false {welcomeScreen()}
+        
         
         dog.clipsToBounds = true
         dog.layer.cornerRadius = 50
@@ -208,6 +212,7 @@ class LoginFile: UIViewController, UITextFieldDelegate,FBSDKLoginButtonDelegate 
                 print (LoginFile.provider)
                 self.doSegue()
             }//end of if
+          
         }//end of dispatch
         
         print (keeper.integer(forKey: "remember"))
@@ -458,6 +463,11 @@ class LoginFile: UIViewController, UITextFieldDelegate,FBSDKLoginButtonDelegate 
         
         
     }
+    
+        func welcomeScreen(){
+        print ("welcomeScreen")
+
+        keeper.set(true, forKey: "firstTimer")    }
     
     
     //alerts/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
