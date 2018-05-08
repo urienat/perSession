@@ -117,8 +117,15 @@ class LoginFile: UIViewController, UITextFieldDelegate,FBSDKLoginButtonDelegate 
     var rememberMe:Int?
     var userEmail:String?
     var userPassword:String! = nil
-    var firstTimer:Bool?
+    var nofirstTimer:Bool?
 
+    @IBOutlet weak var welcomeScreen: UIView!
+    @IBOutlet weak var letsGo: UIButton!
+    @IBAction func letsGo(_ sender: Any) {
+    keeper.set(true, forKey: "nofirstTimer")
+    welcomeScreen.isHidden = true
+    }
+    
     @IBOutlet weak var check: UIButton! // section for rememberme check
     @IBAction func checkBox(_ sender: Any) {
     if checkBox! == true {check.setImage(Vimage, for: .normal)
@@ -174,8 +181,7 @@ class LoginFile: UIViewController, UITextFieldDelegate,FBSDKLoginButtonDelegate 
     
     override func viewDidLoad() {
         connectivityCheck()
-        print (keeper.bool(forKey: "firstTimer"))
-        if keeper.bool(forKey: "firstTimer") == false {welcomeScreen()}
+        
         
         
         dog.clipsToBounds = true
@@ -269,6 +275,19 @@ class LoginFile: UIViewController, UITextFieldDelegate,FBSDKLoginButtonDelegate 
         
         loginBarImage.clipsToBounds = true
         loginBarImage.layer.cornerRadius = 15
+        
+        self.view.bringSubview(toFront: welcomeScreen)
+        welcomeScreen.layer.cornerRadius = 15
+        welcomeScreen.layer.borderWidth = 0.5
+        welcomeScreen.layer.borderColor = blueColor.cgColor
+        welcomeScreen.layoutIfNeeded()
+        letsGo.layer.borderWidth = 0.5
+        letsGo.layer.borderColor = blueColor.cgColor
+        letsGo.layer.cornerRadius =  15//CGFloat(25)
+        letsGo.layoutIfNeeded()
+        print (keeper.bool(forKey: "nofirstTimer"))
+        if keeper.bool(forKey: "nofirstTimer") == false { welcomeScreen.isHidden = false}
+        
         } ///end of view did load//////////////////////////////////////////////////////////////////////////////////////////////////////
    
         //keyboard hide
@@ -464,10 +483,7 @@ class LoginFile: UIViewController, UITextFieldDelegate,FBSDKLoginButtonDelegate 
         
     }
     
-        func welcomeScreen(){
-        print ("welcomeScreen")
-
-        keeper.set(true, forKey: "firstTimer")    }
+    
     
     
     //alerts/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
