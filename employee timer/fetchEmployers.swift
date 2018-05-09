@@ -83,7 +83,7 @@ print (iIndex)
             print (self.employerIdArray.count)
             
             if self.self.employerIdArray.count < 4 && self.self.employerIdArray.count > 1 {
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0.3)) {
                 self.instruction.isHidden = false
                 self.arrowMove(instruct: self.instruction)
                 }//end of dispatch

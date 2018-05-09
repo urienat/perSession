@@ -282,6 +282,21 @@
         self.thinking2.hidesWhenStopped = true
         self.thinking2.startAnimating()
 
+            
+            addAmanualRecord.layer.cornerRadius = 15
+            addAmanualRecord.layer.borderWidth = 0.5
+            addAmanualRecord.layer.borderColor = blueColor.cgColor
+            addAmanualRecord.layoutIfNeeded()
+            
+            startBackground.layer.cornerRadius = 15
+            startBackground.layer.borderWidth = 0.5
+            startBackground.layer.borderColor = blueColor.cgColor
+            startBackground.layoutIfNeeded()
+            special.layer.cornerRadius = 15
+            special.layer.borderWidth = 0.5
+            special.layer.borderColor = blueColor.cgColor
+            special.layoutIfNeeded()
+            
         btn1.setImage(sessions, for: .normal)
         btn1.frame = CGRect(x: 0, y: 0, width: 60, height: 100)
         btn1.addTarget(self, action:#selector(recordsClicked), for: UIControlEvents.touchDown)

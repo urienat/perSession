@@ -124,7 +124,7 @@ extension(ViewController){
         homeTitle.title = employerToS
 
         dbRefEmployer.child(self.employerIDToS).child("myEmployees").queryOrderedByKey().queryEqual(toValue: employeeIDToS).observeSingleEvent(of:.childAdded, with: { (snapshot) in
-        self.startButton.setTitle("+Session Now", for: .normal);
+        self.startButton.setTitle("Session Now", for: .normal);
         self.startImage.image = self.roundImageBig
         self.RateUpdate = Double(snapshot.childSnapshot(forPath: "fEmployerRate").value! as! Double)
         }
