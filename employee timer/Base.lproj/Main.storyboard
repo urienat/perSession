@@ -1062,10 +1062,10 @@
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="iHN-TD-1dx" userLabel="arrow">
-                                <rect key="frame" x="274" y="85" width="40" height="80"/>
+                                <rect key="frame" x="114" y="85" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="HCD-sG-SJb"/>
-                                    <constraint firstAttribute="width" constant="40" id="bhH-wa-SU6"/>
+                                    <constraint firstAttribute="height" constant="200" id="HCD-sG-SJb"/>
+                                    <constraint firstAttribute="width" constant="200" id="bhH-wa-SU6"/>
                                 </constraints>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lxT-w2-3r9">
@@ -4146,7 +4146,7 @@
     </scenes>
     <resources>
         <image name="V" width="156" height="141"/>
-        <image name="arrow" width="30" height="36"/>
+        <image name="arrow" width="200" height="200"/>
         <image name="billsIcon" width="50" height="50"/>
         <image name="calcMachine" width="50" height="50"/>
         <image name="camera" width="25" height="25"/>
@@ -4173,6 +4173,7 @@
         <image name="whiteV" width="133" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="cyf-eK-Md6"/>
         <segue reference="UPU-lN-oqU"/>
         <segue reference="3Wx-xY-sDh"/>
         <segue reference="vGn-ru-ol3"/>
