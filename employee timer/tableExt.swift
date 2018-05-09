@@ -9,7 +9,8 @@ import Firebase
 extension(ViewController){
     
         func tableView(_ employerList: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        instruction.isHidden = true
+            
         if #available(iOS 11.0, *) { //handle when ios 11 is out
         searchController.dismiss(animated: false, completion: nil)
         ///searchController.searchBar.text = "" //to move it after selection

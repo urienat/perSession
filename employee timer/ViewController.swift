@@ -236,7 +236,7 @@
         employerList.dataSource = self
         employerList.delegate = self
             
-        
+            
 
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
@@ -527,6 +527,7 @@
         sideMenuMovement()    }
 
         func sideMenuMovement(){
+        instruction.isHidden = true
         if isSideMenuHidden {
         if #available(iOS 11.0, *) {
         //searchController.dismiss(animated: false, completion: nil)
@@ -560,14 +561,15 @@
         isSideMenuHidden = !isSideMenuHidden
         }//end of issidemenuhidden
 
-        func arrowMove(){
+         
+            func arrowMove(instruct:UIImageView){
         UIView.animate(withDuration: 1.3, delay: 0, options: [.repeat, .autoreverse], animations: {
-        self.arrow.center.y += 13
+        instruct.center.y += 13
         }, completion: nil)
 
 
         UIView.animate(withDuration: 1.3, delay: 0, options: [.repeat, .autoreverse], animations: {
-        self.arrow.center.y -= 20
+        instruct.center.y -= 20
         }, completion: nil)
         }
 
