@@ -23,6 +23,7 @@ class billerCell: UITableViewCell{
     let partially = UIImage(named: "partially")
 
     
+    @IBOutlet weak var billBG: UIView!
     @IBOutlet weak var l1: UILabel!
     @IBOutlet weak var l3: UILabel!
     @IBOutlet weak var l4: UILabel!

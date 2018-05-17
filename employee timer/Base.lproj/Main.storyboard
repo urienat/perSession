@@ -2361,6 +2361,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HdU-r3-375" userLabel="billBg">
+                                                    <rect key="frame" x="6" y="4" width="154" height="35.5"/>
+                                                    <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="0.60105415240000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nM-Xr-0uW" userLabel="cellBtnExt">
                                                     <rect key="frame" x="166" y="4" width="150" height="35.5"/>
                                                     <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="0.60105415239726023" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2372,7 +2376,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="l1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Rlo-ls-wai">
-                                                    <rect key="frame" x="6" y="2" width="180" height="21.5"/>
+                                                    <rect key="frame" x="8" y="2" width="180" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="UwV-zq-hR4"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="eyr-bF-nId"/>
@@ -2404,7 +2408,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="l6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEB-4f-1Nn" userLabel="l6">
-                                                    <rect key="frame" x="6" y="25.5" width="11" height="21.5"/>
+                                                    <rect key="frame" x="8" y="25.5" width="11" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Cg8-Nd-0mJ"/>
                                                     </constraints>
@@ -2416,21 +2420,26 @@
                                             <constraints>
                                                 <constraint firstItem="Rlo-ls-wai" firstAttribute="top" secondItem="8pP-cp-jw0" secondAttribute="top" constant="2" id="2Am-NU-kdx"/>
                                                 <constraint firstItem="yEB-4f-1Nn" firstAttribute="top" secondItem="Rlo-ls-wai" secondAttribute="bottom" constant="2" id="6fJ-Ip-kjU"/>
+                                                <constraint firstItem="HdU-r3-375" firstAttribute="height" secondItem="0nM-Xr-0uW" secondAttribute="height" id="80d-fY-CU3"/>
                                                 <constraint firstItem="0nM-Xr-0uW" firstAttribute="leading" secondItem="clN-0j-1FU" secondAttribute="leading" constant="-4" id="Efx-Uh-Gzn"/>
                                                 <constraint firstItem="yEB-4f-1Nn" firstAttribute="leading" secondItem="Rlo-ls-wai" secondAttribute="leading" id="GcL-pp-ayb"/>
                                                 <constraint firstItem="clN-0j-1FU" firstAttribute="top" secondItem="8pP-cp-jw0" secondAttribute="topMargin" constant="2" id="IEm-Y1-dZI"/>
+                                                <constraint firstItem="HdU-r3-375" firstAttribute="centerY" secondItem="0nM-Xr-0uW" secondAttribute="centerY" id="Log-wn-3k4"/>
                                                 <constraint firstItem="sg5-Ew-ol6" firstAttribute="top" secondItem="8pP-cp-jw0" secondAttribute="topMargin" constant="2" id="QJ2-if-Xud"/>
                                                 <constraint firstItem="0nM-Xr-0uW" firstAttribute="height" secondItem="8pP-cp-jw0" secondAttribute="height" constant="-8" id="QRK-XW-AvS"/>
                                                 <constraint firstItem="sg5-Ew-ol6" firstAttribute="leading" secondItem="clN-0j-1FU" secondAttribute="trailing" constant="1" id="VEJ-SG-feN"/>
                                                 <constraint firstAttribute="trailing" secondItem="0nM-Xr-0uW" secondAttribute="trailing" constant="4" id="i2c-33-eNH"/>
+                                                <constraint firstItem="0nM-Xr-0uW" firstAttribute="leading" secondItem="HdU-r3-375" secondAttribute="trailing" constant="6" id="jdi-Ef-Cas"/>
+                                                <constraint firstItem="HdU-r3-375" firstAttribute="leading" secondItem="8pP-cp-jw0" secondAttribute="leading" constant="6" id="nvh-QG-Eif"/>
                                                 <constraint firstAttribute="bottom" secondItem="P8S-RB-D55" secondAttribute="bottom" constant="3" id="s9c-tR-6gS"/>
-                                                <constraint firstItem="Rlo-ls-wai" firstAttribute="leading" secondItem="8pP-cp-jw0" secondAttribute="leading" constant="6" id="urG-R2-A3F"/>
+                                                <constraint firstItem="Rlo-ls-wai" firstAttribute="leading" secondItem="8pP-cp-jw0" secondAttribute="leading" constant="8" id="urG-R2-A3F"/>
                                                 <constraint firstAttribute="bottom" secondItem="0nM-Xr-0uW" secondAttribute="bottom" constant="4" id="v8x-yS-C4J"/>
                                                 <constraint firstItem="P8S-RB-D55" firstAttribute="trailing" secondItem="0nM-Xr-0uW" secondAttribute="trailing" constant="-4" id="vdy-pW-JCx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="approvalImage" destination="P8S-RB-D55" id="DvY-aT-oqK"/>
+                                            <outlet property="billBG" destination="HdU-r3-375" id="iMU-fL-Gyb"/>
                                             <outlet property="cellBtnExt" destination="0nM-Xr-0uW" id="5Jo-Ve-gNz"/>
                                             <outlet property="l1" destination="Rlo-ls-wai" id="XWA-fn-awJ"/>
                                             <outlet property="l3" destination="sg5-Ew-ol6" id="iRN-0b-KEi"/>

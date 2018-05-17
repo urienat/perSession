@@ -426,6 +426,10 @@ class biller: UIViewController, UITableViewDelegate,UITableViewDataSource, MFMai
         cell.cellBtnExt.layer.borderWidth = 0.5;
         cell.cellBtnExt.layer.borderColor =  redColor.cgColor
         cell.cellBtnExt.layer.cornerRadius =  10
+        
+        cell.billBG.layer.borderWidth = 0.5;
+        cell.billBG.layer.borderColor =  blueColor.cgColor
+        cell.billBG.layer.cornerRadius =  10
 
         if taxBillsToHandle == false || reportMode  == true {cell.l1.text = ("\(billItem.fBillEmployerName!)-\(billItem.fBillEvents!) ses. ") } else {
         cell.l1.text = ("#\(billItem.fBill!) - \(billItem.fBillEmployerName!)")}
