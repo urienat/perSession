@@ -353,6 +353,8 @@ class newVCTable: UIViewController ,UITableViewDelegate, UITableViewDataSource, 
         cell.cellBtnExt.layer.borderWidth = 0.5;
         cell.cellBtnExt.layer.borderColor =  blueColor.cgColor
         cell.cellBtnExt.layer.cornerRadius =  10
+            
+            
 
         //changing the dates for prentation
         if let fInToDate = record.fIn {
@@ -372,7 +374,7 @@ class newVCTable: UIViewController ,UITableViewDelegate, UITableViewDataSource, 
         cell.cellBtnExt.removeTarget(self, action:#selector(self.approvalClicked), for: UIControlEvents.touchDown)
         cell.cellBtnExt.addTarget(self, action:#selector(self.approvalClicked), for: UIControlEvents.touchDown)
 
-        if record.fBill != nil {cell.l7.text = record.fBill!} else {cell.l7.text = ""}
+        if record.fBill != nil {cell.l7.text = "\(record.fBill!)" } else {cell.l7.text = ""}
         return cell
         }//end of func cellforrowat
 
