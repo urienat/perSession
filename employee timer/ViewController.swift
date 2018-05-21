@@ -30,6 +30,8 @@
         let mydateFormat2 = DateFormatter()
         let mydateFormat5 = DateFormatter()
         let mydateFormat7 = DateFormatter()
+            
+            var sesQtyTemp: String?
 
         let roundImageBig = UIImage(named: "roundBig")
         let pencilImage = UIImage(named: "pencilImage")
@@ -68,12 +70,14 @@
         var activeAccount : Bool
         var lastDocAccount :String
         var accountImageUrl : String
-        init(accountName:String, employerRef:String, activeAccount:Bool,lastDocAccount:String,accountImageUrl:String) {
+            var sesQty : String
+            init(accountName:String, employerRef:String, sesQty:String, activeAccount:Bool,lastDocAccount:String,accountImageUrl:String) {
         self.accountName = accountName
         self.employerRef = employerRef
         self.activeAccount = activeAccount
         self.lastDocAccount = lastDocAccount
         self.accountImageUrl = accountImageUrl
+        self.sesQty = sesQty
         }
         }//end of struct
             
