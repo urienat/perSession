@@ -206,7 +206,6 @@
 		AE84DE891E7E638700F08945 /* RebeloperStore */ = {
 			isa = PBXGroup;
 			children = (
-				AE84DE8A1E7E638700F08945 /* CHANGE LOG.rtf */,
 				AE84DE8B1E7E638700F08945 /* RebeloperStore.swift */,
 				AE84DE8C1E7E638700F08945 /* RebeloperStoreSetup.swift */,
 				AE4B0FEB1E82B82F00188B79 /* subs.swift */,
@@ -259,6 +258,7 @@
 			children = (
 				F42DD2981FB03E6A00BBAE75 /* recordsStructure.swift */,
 				AE2928BC1D943C0B00EB493B /* employee timer.entitlements */,
+				AE84DE8A1E7E638700F08945 /* CHANGE LOG.rtf */,
 				AEE95E451D7B092A00093B51 /* AppDelegate.swift */,
 				AE84DE891E7E638700F08945 /* RebeloperStore */,
 				AEC3A7711D7DE1C7005E3F1F /* datePicker */,

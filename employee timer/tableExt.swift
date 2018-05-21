@@ -82,7 +82,9 @@ extension(ViewController){
 
         if filteredEmployerForList[indexPath.row].accountName != "Add new dog" {
         cell2.backgroundColor = UIColor.clear; cell2.employerFirst.isHidden = false;
-            cell2.sesQty?.text = filteredEmployerForList[indexPath.row].sesQty
+            
+        if filteredEmployerForList[indexPath.row].sesQty != "0" {cell2.sesQty.isHidden = false} else  {cell2.sesQty.isHidden = true}
+        cell2.sesQty?.text = filteredEmployerForList[indexPath.row].sesQty
             
             
             
