@@ -57,9 +57,12 @@
                 
             }
            
-            if snapshot.value as? String == nil {
+            if  (snapshot.childSnapshot(forPath: "fSesQty").value as? String) == nil{
                 self.sesQtyTemp = "0"
-            } else {self.sesQtyTemp = (snapshot.childSnapshot(forPath: "fSesQty").value as! String)}
+            } else {  print ("qty:\(snapshot.childSnapshot(forPath: "fSesQty").value as! String)")
+                self.sesQtyTemp = (snapshot.childSnapshot(forPath: "fSesQty").value as! String)}
+            
+            
 
             print ((snapshot.childSnapshot(forPath: "fActive").value) as! Bool)
 

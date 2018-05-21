@@ -145,7 +145,9 @@ import Foundation
             if self.eventCounter == 0 {self.eventsLbl.text = " No Due Sessions";if  self.itemSum == 0{self.toolbar1.isHidden = true;self.noSign.isHidden = false;self.billSender.isEnabled = false;self.billPay.isEnabled = false;}else{self.toolbar1.isHidden = false;self.noSign.isHidden = true;self.billSender.isEnabled = true;self.billPay.isEnabled = true;}}
         else if self.eventCounter == 1 {self.toolbar1.isHidden = false;self.billSender.isEnabled = true;self.billPay.isEnabled = true;self.eventsLbl.text = "\(String(self.eventCounter)) Due session";self.noSign.isHidden = true}
         else {self.toolbar1.isHidden = false;self.billSender.isEnabled = true;self.billPay.isEnabled = true;self.eventsLbl.text = "\(String(self.eventCounter)) due Sessions";self.noSign.isHidden = true}
-
+            
+          self.dbRefEmployers.child(self.employerID).updateChildValues(["fSesQty":String(self.eventCounter)], withCompletionBlock: { (error) in})
+            
         if self.Employerrate == 0.0 { noRateInfo.isHidden = false} else {noRateInfo.isHidden = true}
         self.calc = (Double(self.eventCounter))*(self.Employerrate) + self.itemSum
         self.perEvents.text =  String("\(ViewController.fixedCurrency!)\(self.Employerrate) /session")
