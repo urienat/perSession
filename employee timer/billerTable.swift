@@ -385,6 +385,7 @@ class biller: UIViewController, UITableViewDelegate,UITableViewDataSource, MFMai
         
         biller.statusMemory = 1
         
+        
     }//end of view did load////////////////////////////////////////////////////////////////////////////////////////////
     
         override func viewDidAppear(_ animated: Bool) {
@@ -426,6 +427,10 @@ class biller: UIViewController, UITableViewDelegate,UITableViewDataSource, MFMai
         cell.cellBtnExt.layer.borderWidth = 0.5;
         cell.cellBtnExt.layer.borderColor =  redColor.cgColor
         cell.cellBtnExt.layer.cornerRadius =  10
+         
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.lightGray
+        cell.selectedBackgroundView = bgColorView
         
         cell.billBG.layer.borderWidth = 0.5;
         cell.billBG.layer.borderColor =  blueColor.cgColor
