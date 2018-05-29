@@ -60,7 +60,9 @@
             if  (snapshot.childSnapshot(forPath: "fSesQty").value as? String) == nil{
                 self.sesQtyTemp = "0"
             } else {  print ("qty:\(snapshot.childSnapshot(forPath: "fSesQty").value as! String)")
-                self.sesQtyTemp = (snapshot.childSnapshot(forPath: "fSesQty").value as! String)}
+                self.sesQtyTemp = (snapshot.childSnapshot(forPath: "fSesQty").value as! String)
+                 if Int (self.sesQtyTemp!)! < 0 {self.sesQtyTemp = "0" }
+            }
             
             
 

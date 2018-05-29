@@ -121,7 +121,7 @@ class newVCTable: UIViewController ,UITableViewDelegate, UITableViewDataSource, 
     var accountName = ""
     var accountLastName = ""
     var accountParnet = ""
-    var sesQtyRead:String?
+    var sesQtyRead: String?
     let formatter = NumberFormatter()
     var employerFromMain: String?
     var buttonRow = 0
@@ -276,8 +276,15 @@ class newVCTable: UIViewController ,UITableViewDelegate, UITableViewDataSource, 
         self.accountName = String(describing: snapshot.childSnapshot(forPath: "fName").value!) as String!
         self.accountLastName = String(describing: snapshot.childSnapshot(forPath: "fEmployer").value!) as String!
         self.accountParnet = String(describing: snapshot.childSnapshot(forPath: "fParent").value!) as String!
-         
+            
+        if  (snapshot.childSnapshot(forPath: "fSesQty").value as? String) == nil{
+        print("1")
+        self.sesQtyRead = "1"
+        } else {
+        print ("regular")
         self.sesQtyRead = String(describing: snapshot.childSnapshot(forPath: "fSesQty").value!) as String!
+            if Int (self.sesQtyRead!)! < 0 {self.sesQtyRead = "0" }
+        }
         })
   
         self.thinking.color = self.blueColor
@@ -585,6 +592,8 @@ class newVCTable: UIViewController ,UITableViewDelegate, UITableViewDataSource, 
     self.mailSaver = "\(self.mydateFormat8.string(from: Date()))\r\n\r\n\r\n\(ViewController.fixedName!) \(ViewController.fixedLastName!)\r\n\(self.billInfo!)\r\n\(self.taxId!)\r\n\(self.address!)\r\n\(self.seprator2)\(self.seprator2)\r\n\r\nBill to:\r\n\(self.contact!)\r\n\(self.accountAdress)\r\n\(self.seprator2)\r\n\(self.htmlReport!)\(self.sessionBlock)\r\n\r\n\(self.taxationBlock)\r\n\(self.paymentBlock)\r\n\r\n\r\nMade by PerSession app. "
 
     //update bill with DB
+       
+        
         self.dbRefEmployers.child(self.employerID).updateChildValues(["fSesQty":String(Int(sesQtyRead!)! - records.count)], withCompletionBlock: { (error) in})
 
         
