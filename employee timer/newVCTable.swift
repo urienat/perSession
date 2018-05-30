@@ -283,7 +283,8 @@ class newVCTable: UIViewController ,UITableViewDelegate, UITableViewDataSource, 
         } else {
         print ("regular")
         self.sesQtyRead = String(describing: snapshot.childSnapshot(forPath: "fSesQty").value!) as String!
-            if Int (self.sesQtyRead!)! < 0 {self.sesQtyRead = "0" }
+            if self.sesQtyRead! != "+" {
+                if Int (self.sesQtyRead!)! < 0 {self.sesQtyRead = "0" }}
         }
         })
   
@@ -592,9 +593,9 @@ class newVCTable: UIViewController ,UITableViewDelegate, UITableViewDataSource, 
     self.mailSaver = "\(self.mydateFormat8.string(from: Date()))\r\n\r\n\r\n\(ViewController.fixedName!) \(ViewController.fixedLastName!)\r\n\(self.billInfo!)\r\n\(self.taxId!)\r\n\(self.address!)\r\n\(self.seprator2)\(self.seprator2)\r\n\r\nBill to:\r\n\(self.contact!)\r\n\(self.accountAdress)\r\n\(self.seprator2)\r\n\(self.htmlReport!)\(self.sessionBlock)\r\n\r\n\(self.taxationBlock)\r\n\(self.paymentBlock)\r\n\r\n\r\nMade by PerSession app. "
 
     //update bill with DB
-       
+        if self.sesQtyRead! != "+" {
+            self.dbRefEmployers.child(self.employerID).updateChildValues(["fSesQty":String(Int(sesQtyRead!)! - records.count)], withCompletionBlock: { (error) in})}
         
-        self.dbRefEmployers.child(self.employerID).updateChildValues(["fSesQty":String(Int(sesQtyRead!)! - records.count)], withCompletionBlock: { (error) in})
 
         
         self.dbRefEmployees.child(self.employeeID).child("myBills").child("-\(self.counterForMail2!)").updateChildValues(["fBill": self.counterForMail2!,"fBillDate": self.mydateFormat5.string(from: Date()) ,"fBillStatus": self.billStatus!,"fBillStatusDate":self.mydateFormat5.string(from: Date()) ,"fBillEmployer": self.employerID,"fBillEventRate": self.perEvents.text!, "fBillEvents": String(self.eventCounter) as String,"fBillSum": self.midCalc3, "fBillCurrency": ViewController.fixedCurrency!,"fBillEmployerName": self.employerFromMain!, "fBillMailSaver" : self.mailSaver!,"fBillTax" : self.midCalc ,"fBillTotalTotal": self.midCalc2, "fDocumentName":self.documentName!,"fBalance": self.PaymentBlalnce!
