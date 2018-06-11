@@ -23,6 +23,8 @@ class calander: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     let dbRefEmployer = FIRDatabase.database().reference().child("fEmployers")
     let dbRefEmployee = FIRDatabase.database().reference().child("fEmployees")
     
+    var notPop:Bool = false
+    
     let mydateFormat5 = DateFormatter()
     let mydateFormat6 = DateFormatter()
     let mydateFormat9 = DateFormatter()
@@ -320,7 +322,7 @@ class calander: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
                 
             let query2 = GTLRCalendarQuery_EventsPatch.query(withObject: self.updater , calendarId: "primary", eventId:id1!)
             service.executeQuery(query2) { (ticket: GTLRServiceTicket, Any, error) in
-            if let error = error {self.showAlert(title: "Error", message: error.localizedDescription)
+                if let error = error {self.showAlert(title: "Error: Please Import again", message: error.localizedDescription)
             return
             }//end of if error
             }//end of execute
@@ -404,9 +406,11 @@ class calander: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
         }//end of ggc
     
     func pop(alert: UIAlertAction!){
-    self.navigationController!.popViewController(animated: true)
+        if notPop == false {
+            ViewController.refreshImport = true
+            self.navigationController!.popViewController(animated: true)
     }
-    
+        self.notPop = false}
                     //apple
                     func fetchEventsFromApple() {
                     self.navigationItem.setHidesBackButton(true, animated:true);

@@ -283,6 +283,7 @@ class biller: UIViewController, UITableViewDelegate,UITableViewDataSource, MFMai
 
         if employerID == ""  {self.whoInvoices = "all accounts"} else {whoInvoices = self.employerFromMain}
         if titleLbl == "Not Paid"{whatKindInvoices = "unpaid balance amount"} else {whatKindInvoices = "total amount invoiced" }
+        if taxBillsApproach == nil {taxBillsApproach = ""}
 
         let textForReport = "* This report made on \(mydateFormat5.string(from: Date())) by PerSession APP\n**Invoices of \(whoInvoices!) for defined period include \(whatKindInvoices!).\n***\(taxBillsApproach!)"
         pdfDataTable = pdfDataWithTableView2(tableView: billerConnect, pageHeight: 13*50,totalBG: totalBG, Closing: textForReport as NSString, distance: 60.0)

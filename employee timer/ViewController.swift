@@ -53,6 +53,7 @@
         static var fixedemail:String!
         static var dateTimeFormat:String!
         static var refresh:Bool? = false
+        static var refreshImport:Bool? = false
         static var sessionPusher:Bool?
         static var subPusher:Bool?
         static var billsPusher:Bool?
@@ -366,6 +367,8 @@
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(0)) {
         if ViewController.sessionPusher == true {ViewController.sessionPusher = false;
         self.recordsClicked()}
+        if ViewController.refreshImport == true {ViewController.refreshImport = false;
+        self.fetchEmployers()}
         if ViewController.billsPusher == true {ViewController.billsPusher = false;
         biller.rowMemory = 0
         self.billsClicked()}
