@@ -623,7 +623,7 @@ class calander: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
 
             let allAction = UIAlertAction(title: "Import all accounts", style: .default) { (UIAlertAction) in
                 self.calanderImage.alpha = 0.8
-
+                ViewController.refreshImport = true
                 self.ImportAnimation(alpha: 0.5)
 
             self.spesific = false
