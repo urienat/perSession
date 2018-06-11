@@ -593,8 +593,7 @@ class newVCTable: UIViewController ,UITableViewDelegate, UITableViewDataSource, 
     self.mailSaver = "\(self.mydateFormat8.string(from: Date()))\r\n\r\n\r\n\(ViewController.fixedName!) \(ViewController.fixedLastName!)\r\n\(self.billInfo!)\r\n\(self.taxId!)\r\n\(self.address!)\r\n\(self.seprator2)\(self.seprator2)\r\n\r\nBill to:\r\n\(self.contact!)\r\n\(self.accountAdress)\r\n\(self.seprator2)\r\n\(self.htmlReport!)\(self.sessionBlock)\r\n\r\n\(self.taxationBlock)\r\n\(self.paymentBlock)\r\n\r\n\r\nMade by PerSession app. "
 
     //update bill with DB
-        if self.sesQtyRead! != "+" {
-            self.dbRefEmployers.child(self.employerID).updateChildValues(["fSesQty":String(Int(sesQtyRead!)! - records.count)], withCompletionBlock: { (error) in})}
+            self.dbRefEmployers.child(self.employerID).updateChildValues(["fSesQty":String(Int(sesQtyRead!)! - records.count)], withCompletionBlock: { (error) in})
         
 
         

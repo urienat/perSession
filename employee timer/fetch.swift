@@ -146,7 +146,15 @@ import Foundation
         else if self.eventCounter == 1 {self.toolbar1.isHidden = false;self.billSender.isEnabled = true;self.billPay.isEnabled = true;self.eventsLbl.text = "\(String(self.eventCounter)) Due session";self.noSign.isHidden = true}
         else {self.toolbar1.isHidden = false;self.billSender.isEnabled = true;self.billPay.isEnabled = true;self.eventsLbl.text = "\(String(self.eventCounter)) due Sessions";self.noSign.isHidden = true}
             
-          self.dbRefEmployers.child(self.employerID).updateChildValues(["fSesQty":String(records.count)], withCompletionBlock: { (error) in})
+            if biller == false {
+                if self.sesQtyRead! == "+" {self.sesQtyRead = String(records.count) }
+                self.dbRefEmployers.child(self.employerID).updateChildValues(["fSesQty":String(records.count)], withCompletionBlock: { (error) in})
+            }
+            
+       //   self.dbRefEmployers.child(self.employerID).updateChildValues(["fSesQty":String(records.count)], withCompletionBlock: { (error) in})
+            
+            
+            
             
         if self.Employerrate == 0.0 { noRateInfo.isHidden = false} else {noRateInfo.isHidden = true}
         self.calc = (Double(self.eventCounter))*(self.Employerrate) + self.itemSum
